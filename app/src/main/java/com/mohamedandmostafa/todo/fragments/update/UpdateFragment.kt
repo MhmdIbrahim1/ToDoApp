@@ -79,7 +79,7 @@ class UpdateFragment : Fragment() {
             // Navigate back
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         } else {
-            Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT)
+            Toast.makeText(requireContext(), "Please fill out any field!.", Toast.LENGTH_SHORT)
                 .show()
         }
     }

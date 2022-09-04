@@ -128,6 +128,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         snackBar.show()
     }
 
+    // searching
     override fun onQueryTextSubmit(query: String?): Boolean {
         if (query != null) {
             searchThroughDatabase(query)
