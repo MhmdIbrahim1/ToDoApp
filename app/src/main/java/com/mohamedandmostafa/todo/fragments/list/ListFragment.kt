@@ -14,16 +14,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.mohamedandmostafa.todo.data.models.ToDoData
-import com.mohamedandmostafa.todo.data.viewmodel.ToDoViewModel
-
-import com.mohamedandmostafa.todo.fragments.SharedViewModel
-import com.example.todoapp.fragments.list.adapter.ListAdapter
-import com.mohamedandmostafa.todo.utils.hideKeyboard
-import com.mohamedandmostafa.todo.utils.observeOnce
 import com.google.android.material.snackbar.Snackbar
 import com.mohamedandmostafa.todo.R
+import com.mohamedandmostafa.todo.data.models.ToDoData
+import com.mohamedandmostafa.todo.data.viewmodel.ToDoViewModel
 import com.mohamedandmostafa.todo.databinding.FragmentListBinding
+import com.mohamedandmostafa.todo.fragments.SharedViewModel
+import com.mohamedandmostafa.todo.fragments.list.adapter.ListAdapter
+import com.mohamedandmostafa.todo.utils.hideKeyboard
+import com.mohamedandmostafa.todo.utils.observeOnce
 
 class ListFragment : Fragment(), SearchView.OnQueryTextListener {
 
@@ -97,6 +96,7 @@ class ListFragment : Fragment(), SearchView.OnQueryTextListener {
         recyclerView.adapter = adapter
         recyclerView.layoutManager =
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        //recyclerView.layoutManager = LinearLayoutManger( requireActivity())
 
         // Swipe to Delete
         swipeToDelete(recyclerView)

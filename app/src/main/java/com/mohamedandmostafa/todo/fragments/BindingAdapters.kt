@@ -19,6 +19,7 @@ class BindingAdapters {
 
         @BindingAdapter("android:navigateToAddFragment")
         @JvmStatic
+        //navigate to add fragment
         fun navigateToAddFragment(view: FloatingActionButton, navigate: Boolean){
             view.setOnClickListener {
                 if(navigate){
@@ -55,6 +56,7 @@ class BindingAdapters {
         }
         @BindingAdapter("android:sendDataToUpdateFragment")
         @JvmStatic
+      //navigate to update fragment
         fun sendDataToUpdateFragment(view: ConstraintLayout, currentItem: ToDoData){
             view.setOnClickListener {
                 val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)

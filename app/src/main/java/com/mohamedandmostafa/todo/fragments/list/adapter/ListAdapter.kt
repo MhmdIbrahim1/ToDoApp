@@ -1,4 +1,4 @@
-package com.example.todoapp.fragments.list.adapter
+package com.mohamedandmostafa.todo.fragments.list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mohamedandmostafa.todo.data.models.ToDoData
 import com.mohamedandmostafa.todo.databinding.RowLayoutBinding
-import com.mohamedandmostafa.todo.fragments.list.adapter.ToDoDiffUtil
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
@@ -15,8 +14,8 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     class MyViewHolder(private val binding: RowLayoutBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(toDoData: ToDoData){
-            binding.toDoData = toDoData
-            binding.executePendingBindings()
+            binding.toDoData = toDoData  //bind the toDoData variable with the toDoData from the parameter
+            binding.executePendingBindings() // this will update our view  in our row_layout
         }
         companion object{
             fun from(parent: ViewGroup): MyViewHolder {
@@ -30,9 +29,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder.from(
-            parent
-        )
+        return MyViewHolder.from(parent)
     }
 
     override fun getItemCount(): Int {
@@ -40,7 +37,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = dataList[position]
+        val currentItem = dataList[position] // type of toDoData
         holder.bind(currentItem)
     }
 
